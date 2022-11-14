@@ -118,9 +118,9 @@ class FindTruthTable:
         try:
             self.signfix()
             self.infixToPostfix()
-            out = ''
+            out = 'dec '
             mean = []
-            t = '|___'*self.x
+            t = '|___'*(self.x+1)
             for i in range(len(self.content)):
                 
                 
@@ -133,6 +133,7 @@ class FindTruthTable:
                 sol = self.solvebit(bin)
                 if sol == 1:
                     mean.append(j)
+                out+="{:<4}".format(j)
                 for i in range(len(bin)):
                     if (i+1)%self.x == 0:
                         out+=(f'| {bin[i]} | -->  {sol}\n')
