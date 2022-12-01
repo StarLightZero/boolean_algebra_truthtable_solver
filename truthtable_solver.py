@@ -43,23 +43,25 @@ class FindTruthTable:
         q = 0
         out = ''
         t = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKKLMNOPQRSTUVWXYZ"
-        for i in self.eq:
-            if i == " ":
+        for i in range(len(self.eq)):
+            if self.eq[i] == " ":
                 continue
-            elif i =="'" or i =="’":
+            elif self.eq[i] =="'" or self.eq[i] =="’":
                 out+="'"
-            elif i in t and  q == 1:
-                out+='*'+i
+            elif self.eq[i] in t and  q == 1:
+                out+='*'+self.eq[i]
             
-            elif i in t:
-                out+=i
+            elif self.eq[i] in t:
+                out+=self.eq[i]
                 q = 1
-            elif i =="(" and q == 1:
+            elif self.eq[i] == ")":
+                out+=self.eq[i]
+            elif self.eq[i] =="(" and q == 1:
                 out+='*('
                 q = 0
             
-            elif i not in t:
-                out+=i
+            elif self.eq[i] not in t:
+                out+=self.eq[i]
                 q = 0
         self.eq = out
             
