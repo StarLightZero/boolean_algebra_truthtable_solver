@@ -213,8 +213,6 @@ output_window.pack()
 buttons = tk.Frame(app)
 buttons.pack()
 
-# scary_button = tk.Button(buttons, text="Don't click here!", fg="red", command=scary_action)
-# scary_button.pack({"side": "left"})
 
 action_button = tk.Button(buttons, text="Run", command=run_code, foreground= 'white', background='#18191a')
 action_button.pack()
